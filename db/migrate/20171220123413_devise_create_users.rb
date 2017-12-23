@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
+      #null: falseとは、空欄の場合はエラーを出すという意味。
       t.string :nickname,           null: false
 
       ## Recoverable
