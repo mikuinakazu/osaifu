@@ -1,0 +1,10 @@
+<div class="contents row">
+  <h2>登録する</h2>
+   <%= form_tag('/items', method: :post) do %>
+      <input placeholder="項目名" type="text" name="name">
+      <input placeholder="金額（税込み）" type="number" name="price" min="1">
+      <input placeholder="日付" type="date" name="date">
+      <textarea cols="30" name="text" placeholder="メモ" rows="2"></textarea>
+      <input type="submit" value="SENT">
+   <% end %>
+</div>

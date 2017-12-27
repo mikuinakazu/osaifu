@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 20171224063338) do
     t.string   "name",       limit: 255
     t.integer  "price",      limit: 4
     t.date     "date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.text     "text",       limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade do |t|

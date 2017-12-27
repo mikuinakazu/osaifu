@@ -4,6 +4,8 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.integer :price
       t.date :date
+      t.text :text
+      t.integer :user_id
 
       t.timestamps null: false
     end

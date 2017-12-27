@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+<div class="panel-heading">項目一覧</div>
+
+  <table class="table">
+    <div class="contents row" >
+      <% @items.each do |item| %>
+        <%= item.name %>
+        <%= item.price %>
+        <%= item.date %>
+        <%= item.text %><br>
+      <% end %>
+    </div>
+  </table>
+</div>
+
