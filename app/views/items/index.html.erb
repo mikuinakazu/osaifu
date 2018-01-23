@@ -7,13 +7,14 @@
                 <tr>
                   <th>登録者</th>
                   <th>項目</th>
-                  <th>金額</th>
+                  <th>金額（税込）</th>
                   <th>日付</th>
                   <th>メモ</th>
-                  <th>割り勘済</th>
+                  <th>差額</th>
                 </tr>
             </thead>
-            <% @items.each do |item| %>
+            <% sum = @items[0].price %>
+            <% @items.each_with_index do |item, i| %>
             <tbody>
                 <tr>
                   <td><%= item.user.nickname %></td>
@@ -21,12 +22,16 @@
                   <td><%= item.price %></td>
                   <td><%= item.date %></td>
                   <td><%= item.text %></td>
-                  <!-- <div class="btn-group btn-group-justified" role="group" aria-label="..."> -->
-                    <td><div class="btn-group" role="group">
-                      <button type="button" class="btn btn-default">未</button></div>
-                    <div class="btn-group" role="group">
-                      <button type="button" class="btn btn-default">済</button></div></td>
-                  <!-- </div> -->
+                  <td>
+                  <% unless i == 0 #２回目以降の場合 %>
+                    <% if item.user == @items[i-1].user %>
+                      <% sum += item.price %>
+                    <% else %>
+                      <% sum -= item.price %>
+                    <% end %>
+                  <% end %>
+                  <%= sum %>
+                  </td>
                 </tr>
             </tbody>
             <% end %>

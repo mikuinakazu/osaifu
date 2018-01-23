@@ -101,6 +101,17 @@ a {
   }
 }
 
+a.get {
+  @include basePadding(8px 20px);
+  font-size: 14px;
+  border: 2px solid $accent;
+  color: $accent;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  display: inline-block;
+}
+
 h1,h2,h3,h4,h5,h6 {
 }
 
@@ -378,3 +389,23 @@ footer {
   }
 }
 
+.modify-form{
+  margin: 5px 0 15px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.form-control{
+  margin: 0;
+  height: 46px;
+}
+
+.fa{
+  width: 20px;
+  height: 20px;
+}
+
+.container {
+  margin: 20px auto;
+}

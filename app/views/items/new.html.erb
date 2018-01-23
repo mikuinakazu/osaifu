@@ -1,10 +1,21 @@
 <div class="contents row">
   <h2>登録する</h2>
-   <%= form_tag('/items', method: :post) do %>
-      <input placeholder="項目名" type="text" name="name">
-      <input placeholder="金額（税込み）" type="number" name="price" min="1">
-      <input placeholder="日付" type="date" name="date">
-      <textarea cols="30" name="text" placeholder="メモ" rows="2"></textarea>
-      <input type="submit" value="SENT">
+   <%= form_for @item do |f| %>
+      <div class="form-group">
+      <%= f.text_field :name, placeholder: "項目名", class: "form-control" %>
+      </div>
+      <div class="form-group">
+      <%= f.number_field :price, placeholder: "金額（税込み）", min: "1", class: "form-control" %>
+      </div>
+      <div class="form-group input-group date datepicker modify-form">
+        <%= f.text_field :date, class: "form-control datepicker-input", placeholder: "日付" %>
+        <span class="input-group-addon">
+          <i class="fa fa-calendar"></i>
+        </span>
+        </div>
+      <div class="form-group">
+      <%= f.text_field :text, placeholder: "メモ", class: "form-control" %>
+      </div>
+      <%= f.submit"登録する", class: "btn btn-primary" %>
    <% end %>
 </div>
