@@ -45,7 +45,6 @@ group :development do
   gem 'pry-rails'
   gem 'paperclip'
   gem 'kaminari'
-  gem 'compass-rails','~> 2.0'
   gem 'sprockets', '2.11.0'
   gem 'momentjs-rails', '>= 2.9.0'
   gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
@@ -56,3 +55,4 @@ group :production do
 end
 
 gem 'devise'
+gem 'compass-rails','~> 2.0'
